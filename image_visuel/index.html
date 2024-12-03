@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="js_active vc_desktop vc_transform vc_transform vc_transform skrollr skrollr-desktop"  lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page multilingue</title>
+</head>
+<body>
+  <h1 id="welcome">Bienvenue sur notre page!</h1>
+  <p id="content">Le contenu change en fonction de la langue choisie ou détectée.</p>
+
+  <script>
+    // Récupérer la langue préférée de l'utilisateur
+    const userLanguage = navigator.language || navigator.userLanguage; 
+
+    // Vérifier la langue du navigateur et la mettre dans le attribut lang de la page
+    if (userLanguage.includes("en")) {
+      document.documentElement.lang = "en";
+      document.getElementById('welcome').textContent = "Welcome to our page!";
+      document.getElementById('content').textContent = "Content changes based on detected language.";
+    } else if (userLanguage.includes("es")) {
+      document.documentElement.lang = "es";
+      document.getElementById('welcome').textContent = "¡Bienvenido a nuestra página!";
+      document.getElementById('content').textContent = "El contenido cambia según el idioma detectado.";
+    }
+    // Si la langue n'est pas détectée ou non supportée, rester en français
+  </script>
+</body>
+</html>
